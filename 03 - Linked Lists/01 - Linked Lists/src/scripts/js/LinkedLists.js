@@ -1,4 +1,5 @@
 //Graphical representation of a simply linked list
+// 1 -----> 2 -----> 3 -----> 4 -----> null
 /*let singlyLinkedList = {
     head: 1,
     next: {
@@ -25,14 +26,36 @@ class Node {
 class MySinglyLinkedList {
     constructor(value) {
         this.head = {
-            value = value,
-            next: null,
+            value: value,
+            next: null
         }
         this.tail = this.head;
 
         this.length = 1;
     }
+
+
+    append(value) {
+        const newNode = new Node(value);
+
+        this.tail.next = newNode;
+
+        this.tail = newNode;
+
+        this.length++;
+    }
+
+
+    prepend(value) {
+        const newNode = new Node(value);
+
+        newNode.next = this.head;
+
+        this.head = newNode;
+
+        this.length++;
+    }
 }
 
 
-let MySinglyLinkedList = new MySinglyLinkedList(1);
+let mySinglyLinkedList = new MySinglyLinkedList(1);
