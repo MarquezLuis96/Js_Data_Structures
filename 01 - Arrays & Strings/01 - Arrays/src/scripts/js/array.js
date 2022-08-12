@@ -19,7 +19,7 @@ class MyArray {
 
     //Extract the last elemente of the array
     pop() {
-        const lastItem = this.data[this.length - 14];
+        const lastItem = this.data[this.length - 1];
         delete this.data[this.length - 1];
         this.length--;
         return lastItem;
