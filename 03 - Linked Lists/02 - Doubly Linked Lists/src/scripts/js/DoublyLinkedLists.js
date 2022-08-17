@@ -27,6 +27,19 @@ class DoublyLinkedLists {
         this.length++;
         return this;
     }
+
+    prepend(value) {
+        const newNode = new Node(value);
+        newNode.next = this.head;
+        this.head.prev = newNode;
+        this.head = newNode;
+        this.length++;
+        return this;
+    }
 }
 
 let myDoublyLinkedList = new DoublyLinkedLists(1);
+myDoublyLinkedList.append(2);
+myDoublyLinkedList.append(3);
+myDoublyLinkedList.append(4);
+myDoublyLinkedList.append(5);
