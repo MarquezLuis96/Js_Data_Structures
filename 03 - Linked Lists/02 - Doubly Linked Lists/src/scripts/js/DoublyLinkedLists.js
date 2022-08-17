@@ -66,17 +66,38 @@ class DoublyLinkedLists {
                 console.log("Key not found");
                 return undefined;
             }
-            
+
             currentNode = currentNode.next;
             index++;
         }
 
         return index;
     }
+
+    //Inserts a new node after a given index
+    insertAfterNode(key, index) {
+        if (index > this.length) {
+            this.append(key);
+            return this;
+        }
+
+        const newNode = new Node(key);
+        const index_node = this.getNode(index);
+
+        newNode.prev = index_node;
+        newNode.next = index_node.next;
+
+        index_node.next = newNode;
+        index_node.next.prev = newNode;
+
+        this.length++;
+
+        return this;
+    }
 }
 
 let myDoublyLinkedList = new DoublyLinkedLists(1);
-myDoublyLinkedList.append(2);
+//myDoublyLinkedList.append(2);
 myDoublyLinkedList.append(3);
-myDoublyLinkedList.append(4);
+//myDoublyLinkedList.append(4);
 myDoublyLinkedList.append(5);
