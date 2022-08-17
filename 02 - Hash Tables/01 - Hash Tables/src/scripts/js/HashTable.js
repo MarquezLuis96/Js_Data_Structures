@@ -38,7 +38,7 @@ class HashTable {
 
     getAllKeys() {
         const keys = [];
-        for (let i = 0; i < this.length; i++) {
+        for (let i = 0; i < this.data.length; i++) {
             if(this.data[i]) {
                 for(let j = 0; j < this.data[i].length; j++) {
                     keys.push(this.data[i][j][0]);
@@ -47,6 +47,13 @@ class HashTable {
         }
         return keys;
     }
+
+    /*getAllKeys() {
+        return this.data.reduce((instance, value) => {
+            const keys = value.map(([key]) => key);
+            return instance.concat(keys)
+        }, []);
+    }*/
 
     remove(key) {
         const address = this.hashMethod(key);
