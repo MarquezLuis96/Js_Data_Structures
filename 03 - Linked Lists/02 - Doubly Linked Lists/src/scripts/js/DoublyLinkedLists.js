@@ -36,6 +36,25 @@ class DoublyLinkedLists {
         this.length++;
         return this;
     }
+
+    //Return the node corresponding to a certain index
+    getNode(index) {
+        if (index > this.length - 1) {
+            console.log("Exception: Index out of bounds.");
+            console.log("The index doesn't exist.");
+            return undefined;
+        }
+
+        let counter = 0;
+        let currentNode = this.head;
+
+        while(counter < index) {
+            currentNode = currentNode.next;
+            counter++;
+        }
+
+        return currentNode;
+    }
 }
 
 let myDoublyLinkedList = new DoublyLinkedLists(1);
