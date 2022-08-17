@@ -94,10 +94,23 @@ class DoublyLinkedLists {
 
         return this;
     }
+
+    //Deletes a node given a key
+    deleteKey(key_to_delete) {
+        let index_to_delete = this.getKeyIndex(key_to_delete);
+        let node_to_delete = this.getNode(index_to_delete);
+
+        node_to_delete.next.prev = node_to_delete.prev;
+        node_to_delete.prev.next = node_to_delete.next;
+
+        this.length--;
+
+        return this;
+    }
 }
 
 let myDoublyLinkedList = new DoublyLinkedLists(1);
-//myDoublyLinkedList.append(2);
+myDoublyLinkedList.append(2);
 myDoublyLinkedList.append(3);
-//myDoublyLinkedList.append(4);
+myDoublyLinkedList.append(4);
 myDoublyLinkedList.append(5);
