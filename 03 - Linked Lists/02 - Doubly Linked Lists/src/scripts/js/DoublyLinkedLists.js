@@ -55,6 +55,24 @@ class DoublyLinkedLists {
 
         return currentNode;
     }
+
+    //Return the node index corresponding to acertain key
+    getKeyIndex(key) {
+        let index = 0;
+        let currentNode = this.head;
+
+        while (currentNode.value !== key) {
+            if (currentNode.next == null) {
+                console.log("Key not found");
+                return undefined;
+            }
+            
+            currentNode = currentNode.next;
+            index++;
+        }
+
+        return index;
+    }
 }
 
 let myDoublyLinkedList = new DoublyLinkedLists(1);
