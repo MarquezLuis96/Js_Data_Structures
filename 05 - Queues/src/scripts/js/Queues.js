@@ -28,6 +28,24 @@ class Queue {
         return this;
     }
 
+    //This method removes the first element of the queue
+    dequeue() {
+        if (this.length === 0) {
+            console.log("Exception: UNDERFLOW - No elements into the Queue.");
+            return undefined;
+        }
+        else if (this.length === 1) {
+            this.first = null;
+            this.last = null;
+            this.length--;
+        }
+        else {
+            this.first = this.first.next;
+            this.length--;
+        }
+        return this;
+    }
+
     //Returns the first element of the queue
     peek() {
         return this.first;
