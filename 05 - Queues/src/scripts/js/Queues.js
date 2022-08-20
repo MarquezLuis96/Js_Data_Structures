@@ -24,6 +24,7 @@ class Queue {
             this.last = newNode;
         }
 
+        this.length++;
         return this;
     }
 
